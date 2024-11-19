@@ -5,6 +5,8 @@ const port = process.env.PORT || 3000;
 app.use(express.json()); // Middleware to parse JSON request body
 
 app.post("/api/transaction", (req, res) => {
+
+  console.log(req.body , req.headers)
   const response = {
     originalTransactionId: "23456432453",
     description: "PARTIAL_RECOVERY",
@@ -14,6 +16,7 @@ app.post("/api/transaction", (req, res) => {
     transactionId: "3456787654678",
     transactionDate: "21/04/56",
     status: "P1",
+    amountDeducted:"0.1"
   };
   res.status(200).json(response);
 });
